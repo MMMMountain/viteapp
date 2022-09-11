@@ -1,4 +1,6 @@
 import sysCfg, { ISysCfg, ISysCfgBModItem } from "./syscfg";
+import appCtl from "@/controller/AppCtl";
+
 const app = {
   //获取系统业务信息 传入的key是 ISysCfg对象里的某一个key
   getConfig<T>(key: keyof ISysCfg): T {
@@ -11,6 +13,9 @@ const app = {
     ) as ISysCfgBModItem;
     // return res ? res.enable : false;
     return res.enable;
+  },
+  getAppCtl() {
+    return appCtl;
   },
 };
 

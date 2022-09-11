@@ -1,5 +1,4 @@
 import cookies from "js-cookie";
-
 const iTools = {
   Router: {},
   Store: {},

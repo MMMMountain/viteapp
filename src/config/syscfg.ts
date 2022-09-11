@@ -9,7 +9,10 @@ export interface ISysCfg {
 
 const iSysCfg: ISysCfg = {
   baseUrl: "http://localhost:8080",
-  enableBModNames: [{ name: "blog", enable: true }],
+  enableBModNames: [
+    { name: "blog", enable: true },
+    { name: "keepBooks", enable: true },
+  ],
 };
 
 export default iSysCfg;
