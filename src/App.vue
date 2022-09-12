@@ -11,25 +11,17 @@ const changeLpk = () => {
 </script>
 
 <template>
-  <Icon icon="icon-time" />
-  <van-button type="primary" @click="changeLpk">{{ lpk("Index") }}</van-button>
-  <van-calendar v-model:show="show" @confirm="onConfirm" />
-  <div class="theme">
-    <div class="theme-item" v-for="index in 3">{{ index }}</div>
+  <div class="app-w">
+    <!-- <div class="title">app-view</div> -->
+    <router-view></router-view>
   </div>
 </template>
 
 <style scoped lang="scss">
-.theme {
-  display: flex;
-  justify-content: space-between;
-  .theme-item {
-    margin: 10px 20px;
-    width: 30%;
-    padding: 30px 0;
-    text-align: center;
-    background-color: var(--theme-color-6);
-    color: #fff;
+.app-w {
+  height: 100vh;
+  .title {
+    padding: 30px;
   }
 }
 </style>

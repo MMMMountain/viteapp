@@ -10,6 +10,7 @@ import "./assets/styles/black-theme.scss";
 import "normalize.css/normalize.css";
 import "./assets/fonts/iconfont.css";
 import "./assets/styles/global.scss";
+import { initRouter } from "./router";
 
 (async () => {
   /**
@@ -38,5 +39,17 @@ import "./assets/styles/global.scss";
   uiApp.config.globalProperties.Tools = window.Tools;
   uiApp.config.globalProperties.lpk = window.lpk;
 
-  uiApp.mount("#app");
+  /**
+   *初始化路由的配置
+   *初始化各业务模块的配置
+   *路由守卫的处理
+   *keep-alive的使用
+   */
+  uiApp.use(initRouter()).mount("#app");
 })();
+
+/*
+ *前端开发一定是：工程化/模块化/可插拔/易扩展/细粒度/易维护/强可读。
+ *不同的模块安模块编写，模块里面我们进行拆分例如一个语言包 模块的工具块/模块常量/模块的入口文件（初始化 暴露出去的方法等）/
+ *ts的优势：在编码中可以有智能提示 编码中的错误提示 ts代码便于可读与维护 类型的约束限制了我们错误的可能性
+ */
